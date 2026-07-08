@@ -13,11 +13,11 @@ export default function Home() {
             complete answer first, free, with no email wall. If you then want a licensed
             professional, we&rsquo;ll connect you. That part is always your call.
           </p>
-          <form className="askbar" action="/tools/penalty-calculator" role="search">
+          <form className="askbar" action="/helpline" role="search">
             <input
               type="text"
               name="q"
-              placeholder="Ask anything — “what will breaking my mortgage cost?”"
+              placeholder="Ask anything — the line answers in seconds"
               aria-label="Ask a mortgage question"
             />
             <button type="submit">Get help</button>

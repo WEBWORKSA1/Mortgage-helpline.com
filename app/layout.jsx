@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
               Mortgage&nbsp;Helpline
             </Link>
             <nav className="nav" aria-label="Main">
+              <Link href="/helpline">Ask the Helpline</Link>
               <Link href="/tools/penalty-calculator">Penalty</Link>
               <Link href="/tools/renewal-calculator">Renewal</Link>
               <Link href="/how-we-make-money">How we make money</Link>

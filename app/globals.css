@@ -127,3 +127,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .ftr-in { display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between; }
 .ftr a { color: var(--muted); }
 .ftr .legal { margin-top: 26px; font-size: .78rem; max-width: 72ch; }
+
+/* ---------- helpline chat ---------- */
+.hl { max-width: 760px; padding-bottom: 90px; }
+.hl-empty { margin-top: 8px; }
+.hl-hello { color: var(--muted); max-width: 56ch; }
+.hl-starters { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.hl-starters button { font-size: .87rem; border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px; color: var(--ink); background: #fff; cursor: pointer; font-family: inherit; }
+.hl-starters button:hover { border-color: var(--line); color: var(--line); }
+.hl-thread { margin-top: 26px; display: flex; flex-direction: column; gap: 16px; }
+.hl-msg { display: flex; gap: 10px; }
+.hl-msg.u { justify-content: flex-end; }
+.hl-msg.a { justify-content: flex-start; }
+.hl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pulse); flex: none; margin-top: 12px; }
+.hl-bubble { max-width: 82%; padding: 12px 16px; border-radius: 14px; white-space: pre-wrap; font-size: .97rem; line-height: 1.55; }
+.hl-msg.u .hl-bubble { background: var(--ink); color: #eef5f1; border-bottom-right-radius: 4px; }
+.hl-msg.a .hl-bubble { background: var(--surface); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.hl-bar { margin-top: 26px; max-width: none; }
+.hl-bar input:disabled, .hl-bar button:disabled { opacity: .6; cursor: default; }
+.hl-err { margin-top: 12px; color: #a33; font-size: .9rem; }
+.hl-fine { margin-top: 16px; font-size: .76rem; color: var(--muted); max-width: 68ch; }
