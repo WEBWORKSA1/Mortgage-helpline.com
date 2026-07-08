@@ -66,7 +66,7 @@ export default function Home() {
                 second mortgage, or cash-out refi — the right choice depends on your first
                 mortgage rate, and sometimes the right answer is none of them.
               </p>
-              <span className="go" style={{ color: "var(--muted)" }}>Guide coming soon</span>
+              <Link className="go" href="/tools/equity-calculator">Price the three paths →</Link>
             </div>
             <div className="card">
               <div className="k">50%+</div>
