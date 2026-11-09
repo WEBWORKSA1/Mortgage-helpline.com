@@ -1,57 +1,28 @@
-export const metadata = {
-  title: "How we make money",
-  description:
-    "Every way Mortgage Helpline earns revenue, in plain language, and the three commitments that never bend.",
-};
+import LegalPage from "@/components/LegalPage";
+export const metadata = { title: "How We Make Money", description: "Every way Mortgage Helpline earns revenue, in plain language, and the commitments that never bend.", alternates: { canonical: "/how-we-make-money" } };
+const S = `
+Free help still costs money to run, so here is our entire revenue model. If a way of earning ever appears on this site that isn't on this page, hold us to it.
 
-export default function Page() {
-  return (
-    <main className="wrap prose">
-      <h1>How we make money</h1>
-      <p>
-        Free help still costs money to run, so here is our entire revenue model in plain
-        language. If a way of earning ever appears on this site that isn&rsquo;t on this page,
-        hold us to it.
-      </p>
+## 1. Display advertising (Google AdSense)
+Pages carry ads served by Google AdSense, labelled as advertisements. Advertisers have no influence on what we write, and we block ad categories we consider predatory in this space where the ad platform allows it. You can choose non-personalized ads at any time — see our [privacy policy](/privacy).
 
-      <h2>1. Optional referrals to licensed professionals</h2>
-      <p>
-        After you&rsquo;ve received the full answer, you can ask to be connected with a licensed
-        mortgage professional. If you do, that professional pays us a referral fee. You are
-        never required to connect with anyone to use any tool or read any guide, and choosing
-        not to changes nothing about the help you get.
-      </p>
+## 2. Optional referrals to licensed professionals
+After you've received the full answer, you can ask to be matched with one licensed mortgage professional. If you do, that professional may pay us a referral fee. You are never required to connect with anyone to use any tool or read any guide.
 
-      <h2>2. Clearly labelled sponsorships</h2>
-      <p>
-        Some businesses pay to appear in spaces marked <em>Sponsored</em>. Sponsorship buys a
-        labelled spot — it never buys a ranking, a recommendation, or a kinder review. Nothing
-        unlabelled on this site is paid for.
-      </p>
+## 3. Clearly labelled sponsorships and partnerships
+Some businesses pay for spaces marked *Sponsored* or to fund contest prizes. Sponsorship buys a labelled spot — never a ranking, a recommendation, or a kinder review.
 
-      <h2>3. Advertising</h2>
-      <p>
-        Some pages carry standard display ads. Advertisers have no influence on what we write,
-        and we decline categories we consider predatory in this space, whatever they offer to pay.
-      </p>
+## 4. Voluntary support
+Readers can [support the site](/support). Contributions fund operations, tools, expert contributors, outreach and contests. They are not tax-deductible and never buy influence.
 
-      <h2>What we will not do</h2>
-      <ul>
-        <li>Sell or auction your information to multiple parties. If you ask to be connected, your details go to one professional you approved — once.</li>
-        <li>Gate a calculator result or an answer behind an email address.</li>
-        <li>Accept payment to alter a recommendation, a ranking, or a piece of guidance.</li>
-        <li>Tell you to do a transaction that the numbers say you shouldn&rsquo;t. Sometimes the right answer costs us a referral. That&rsquo;s the deal.</li>
-      </ul>
+## What we will not do
+- Sell or auction your information to multiple parties. If you ask to be connected, your details go to one professional, once.
+- Gate a calculator result or an answer behind an email address.
+- Accept payment to alter a recommendation, a ranking, or a helpline answer.
+- Tell you to do a transaction the numbers say you shouldn't. Sometimes the right answer costs us a referral. That's the deal.
 
-      <div className="commit">
-        The test we hold every page to: would this answer be identical if no one paid us
-        anything? If not, it doesn&rsquo;t ship.
-      </div>
+> The test every page is held to: would this answer be identical if no one paid us anything? If not, it doesn't ship.
 
-      <p>
-        Questions about any of this? The moment we have a public inbox, it will be listed here.
-        This page changes only by addition, never by quiet deletion.
-      </p>
-    </main>
-  );
-}
+Questions? [Contact us](/contact). This page changes only by addition, never by quiet deletion.
+`;
+export default function Page() { return <LegalPage title="How we make money" source={S} />; }
