@@ -1,0 +1,30 @@
+name: Daily refresh
+
+on:
+  schedule:
+    - cron: "17 11 * * *"   # every day, 11:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Pull live rates, complaints, news and videos
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/refresh.mjs
+      - name: Commit snapshot (triggers Vercel redeploy)
+        run: |
+          git config user.name "mortgagehelpline-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/live.json
+          git diff --cached --quiet || git commit -m "Daily refresh $(date -u +%F)"
+          git push

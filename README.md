@@ -1,31 +1,36 @@
 # mortgagehelpline.com
 
-Straight answers for your mortgage. Trust-first mortgage help for Canada & the USA.
+**Straight answers for your mortgage** — a trust-first mortgage help platform for Canada, the United States and India.
 
-## Stack
-- Next.js 14 (App Router) · React 18 · vanilla CSS design tokens
-- Fonts via Google Fonts link: Bricolage Grotesque / Public Sans / IBM Plex Mono
+## What's in the box
+- **AI helpline** (`/helpline`, edge API with rate limiting) governed by the published trust charter
+- **Lead generation**: 3-step "get matched" wizard (`/get-help`) — one licensed pro, never auctioned; calculators pre-fill it
+- **9 tools**: mortgage payment + amortization, affordability/stress test, renewal, Canadian penalty (IRD, s.10), refinance break-even, home equity 3-paths, India EMI, dispute-letter generator
+- **18 sourced guides**, 65-term glossary, FAQ, Canada/USA/India hubs
+- **Live, self-updating data**: Bank of Canada (Valet), Freddie Mac PMMS via FRED, CFPB complaint mix, official + trade news feeds, official YouTube channels, daily brief
+- **Monetization**: Google AdSense (auto ads + optional manual slot, ads.txt, consent choice), referrals, labelled sponsorships, voluntary support (`/support`), contests with rules (`/contests`), talent network (`/careers`), partners (`/advertise`)
+- **Compliance**: privacy (AdSense/PIPEDA/Law 25/CCPA/DPDP), terms, disclaimer, editorial policy, trademark & copyright notice, sitemap, robots, structured data
+
+## How the site stays fresh automatically
+1. **Vercel Cron** (`vercel.json`) calls `/api/refresh` every day, which purges the cached home, rates, news and videos pages.
+2. **ISR** — those pages re-fetch live sources (and re-cache them for up to 12 hours). With `ANTHROPIC_API_KEY` set, Claude writes the daily brief strictly from the fetched numbers (cached per data date).
+3. Every source fails soft: the committed snapshot in `data/live.json` is shown if a source is down.
+4. Optional: `npm run refresh` (or the GitHub Action template in `docs/daily-refresh.github-action.yml`, copied to `.github/workflows/`) also commits a fresh snapshot daily. Set `CRON_SECRET` in Vercel to lock the refresh endpoint.
+
+## Forms → inbox
+All forms post to `/api/submit`, which delivers server-side to the site inbox (never sent to the browser). Delivery order: Resend (`RESEND_API_KEY`) → Web3Forms (`WEB3FORMS_KEY`) → zero-config FormSubmit relay (first submission triggers a one-time activation email).
 
 ## Run
 ```
 npm install
-npm run dev
+npm run dev          # local
+npm run refresh      # pull live data into data/live.json
 ```
-For the AI helpline, copy `.env.example` to `.env.local` and set `ANTHROPIC_API_KEY` (in production: Vercel > Settings > Environment Variables).
-
-## v1 scope (this repo)
-- Home: ask-bar hero (routes to the helpline), pulse-line signature, pain-point cards, trust commitments
-- /helpline — streaming AI chat (edge route at /api/helpline), trust charter enforced in the system prompt
-- /tools/penalty-calculator — CA fixed/variable break penalty (3-mo vs IRD, posted vs discounted method, Interest Act 5-yr cap)
-- /tools/renewal-calculator — renewal payment shock
-- /how-we-make-money — the bias firewall page
-
-## Roadmap
-1. DONE: AI helpline (streaming; voice later)
-2. Equity takeout guide + calculator (US focus), servicing dispute letter generator (RESPA RFI / FCAC)
-3. Programmatic content engine (lender-specific penalty pages, renewal guides)
-4. Free merit-ranked directory (NMLS + provincial registries)
-5. FR localization (Canada), then India (DSA model)
+See `.env.example` for optional settings. Content lives in `content/` (guides, glossary, FAQ, roles, contests, quiz) — edit and push; pages update automatically.
 
 ## Principles (non-negotiable)
 Full answer first · no email walls · no pay-to-rank · one-party referrals only · every estimate labelled an estimate.
+
+Research: `docs/competitive-research.md` (35 sites reviewed).
+
+© 2026 Mortgage Helpline. All rights reserved. Mortgage Helpline™ and MortgageHelpline.com™ are trademarks of Mortgage Helpline.
