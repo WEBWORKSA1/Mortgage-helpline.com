@@ -1,0 +1,39 @@
+{
+  "updatedAt": "2026-11-09T06:00:00.000Z",
+  "ca": {
+    "policy": { "d": "2026-11-05", "v": 2.5, "prev": { "v": 2.25, "changedOn": "2026-10-28" } },
+    "prime": { "d": "2026-11-04", "v": 4.7, "prev": { "v": 4.45, "changedOn": "2026-11-04" } },
+    "posted5": { "d": "2026-11-04", "v": 6.19, "prev": null },
+    "posted3": { "d": "2026-11-04", "v": 6.05, "prev": null },
+    "posted1": { "d": "2026-11-04", "v": 5.49, "prev": null },
+    "history": {
+      "posted5": [["2026-10-21", 6.19], ["2026-10-28", 6.19], ["2026-11-04", 6.19]],
+      "prime": [["2026-10-21", 4.45], ["2026-10-28", 4.45], ["2026-11-04", 4.7]],
+      "policy": [["2026-10-21", 2.25], ["2026-10-28", 2.5], ["2026-11-05", 2.5]]
+    }
+  },
+  "us": {
+    "m30": { "d": "2026-11-05", "v": 7.18, "weekAgo": 7.24, "yearAgo": 6.22 },
+    "m15": { "d": "2026-11-05", "v": 6.57, "weekAgo": 6.6, "yearAgo": 5.5 },
+    "fedUpper": null,
+    "history": {
+      "m30": [["2026-10-08", 7.4], ["2026-10-15", 7.4], ["2026-10-22", 7.32], ["2026-10-29", 7.24], ["2026-11-05", 7.18]],
+      "m15": [["2026-10-29", 6.6], ["2026-11-05", 6.57]]
+    }
+  },
+  "complaints": {
+    "since": "2026-10-01",
+    "total": 2828,
+    "issues": [
+      { "name": "Trouble during payment process", "count": 1295 },
+      { "name": "Struggling to pay mortgage", "count": 931 },
+      { "name": "Applying for a mortgage or refinancing an existing mortgage", "count": 250 },
+      { "name": "Closing on a mortgage", "count": 242 }
+    ]
+  },
+  "news": [],
+  "videos": [
+    { "id": "br5EPugsnLs", "title": "Mortgage Forbearance: What You Need to Know", "channel": "CFPB", "date": "2020-05-01T00:00:00Z" }
+  ],
+  "brief": null
+}
