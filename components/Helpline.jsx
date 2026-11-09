@@ -1,11 +1,14 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const STARTERS = [
   "What will breaking my mortgage cost?",
   "My renewal offer looks high — what can I do?",
   "HELOC vs cash-out refi — which fits my situation?",
   "My servicer misapplied a payment. What are my rights?",
+  "I'm behind on payments — what are my options?",
+  "Should I prepay my home loan or invest? (India)",
 ];
 
 export default function Helpline({ initialQuestion = "" }) {
@@ -78,11 +81,11 @@ export default function Helpline({ initialQuestion = "" }) {
     <div className="hl">
       {messages.length === 0 && (
         <div className="hl-empty">
-          <p className="hl-hello">
-            Ask anything about a residential mortgage in Canada or the US. Full answer,
+          <p className="muted">
+            Ask anything about a residential mortgage or home loan in Canada, the US or India. Full answer,
             free, nothing required from you.
           </p>
-          <div className="hl-starters">
+          <div className="chips">
             {STARTERS.map((s) => (
               <button key={s} type="button" onClick={() => send(s)}>{s}</button>
             ))}
@@ -100,7 +103,14 @@ export default function Helpline({ initialQuestion = "" }) {
         <div ref={endRef} />
       </div>
 
-      {error && <p className="hl-err" role="alert">{error}</p>}
+      {!busy && messages.some((m) => m.role === "assistant" && m.content) && (
+        <div className="hl-next">
+          <span>Want one licensed professional to look at your exact numbers?</span>
+          <Link className="btn" href="/get-help">Get matched free →</Link>
+        </div>
+      )}
+
+      {error && <p className="err" role="alert">{error}</p>}
 
       <form
         className="askbar hl-bar"
@@ -117,7 +127,7 @@ export default function Helpline({ initialQuestion = "" }) {
         <button type="submit" disabled={busy}>{busy ? "On the line…" : "Ask"}</button>
       </form>
 
-      <p className="hl-fine">
+      <p className="hint muted" style={{ marginTop: 14 }}>
         Educational information, not financial, legal, or tax advice. Figures are estimates —
         confirm exact amounts with your lender in writing. Nothing you type here is used to
         contact you.

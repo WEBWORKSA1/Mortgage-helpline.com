@@ -1,0 +1,14 @@
+export const FAQ = [
+  ["Is Mortgage Helpline really free?", "Yes. Every tool, guide and helpline answer is free, with no email required. We are funded by ads, voluntary support, labelled sponsorships, and referral fees only when you choose to be connected with a professional. See how we make money."],
+  ["Are you a lender or a broker?", "No. We are an independent consumer-help resource. We don't lend money or arrange mortgages ourselves. If you ask, we can connect you with one licensed professional in your province or state."],
+  ["Do you sell my information?", "No. If you ask to be connected, your details go to one professional you approved, once. They are never auctioned or resold to multiple companies."],
+  ["How current are the rates on this site?", "Rates refresh automatically every day from public sources — the Bank of Canada and Freddie Mac's weekly survey (via the St. Louis Fed). They are market averages for comparison, not offers. Each figure shows its as-of date."],
+  ["Can I trust the AI helpline?", "The helpline follows a published charter: full answer first, no invented rates or rules, and every number labelled an estimate. It is educational, not advice — confirm anything important with your lender in writing or a licensed professional."],
+  ["What does breaking my mortgage cost in Canada?", "Usually three months' interest for variable rates and the greater of three months' interest or the interest rate differential for fixed rates. Our penalty calculator estimates both."],
+  ["Can I switch lenders at renewal in Canada?", "Yes, with no prepayment penalty at maturity. Since November 2024, uninsured straight switches at federally regulated lenders no longer require the stress test."],
+  ["My US servicer made a mistake. What do I do?", "Send a written Notice of Error to the servicer's designated address. It must acknowledge within 5 business days and generally respond within 30. Our letter generator builds it for you."],
+  ["I'm behind on payments. Where can I get free help?", "Call your servicer early. In the US, HUD-approved housing counselors are free at 1-800-569-4287. In Canada, contact your lender and a non-profit credit counsellor. Never pay an upfront fee for mortgage relief."],
+  ["Do you cover India?", "Yes — our India hub covers EMIs, repo-linked rates, prepayment rules and complaints, with an EMI calculator. More India content is on the way."],
+  ["How do I support the site?", "Use it and share it. If you'd like to contribute, the Support page lists ways to help fund free tools, outreach and contests. Contributions are not tax-deductible."],
+  ["How do I advertise or partner with you?", "Use the Advertise page or the contact link at the top of every page. Sponsorships are always labelled and can never buy a ranking or a recommendation."],
+];
