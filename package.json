@@ -1,14 +1,15 @@
 {
   "name": "mortgage-helpline",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "refresh": "node scripts/refresh.mjs"
   },
   "dependencies": {
-    "next": "14.2.15",
+    "next": "14.2.35",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
