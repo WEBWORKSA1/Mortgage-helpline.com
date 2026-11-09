@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const fmt = (n) =>
   n.toLocaleString("en-CA", { style: "currency", currency: "CAD", maximumFractionDigits: 0 });
@@ -65,6 +66,7 @@ export default function RenewalCalculator() {
           offer, consider extending amortization (raises total interest), or make a lump-sum
           prepayment before renewal. Switching lenders at renewal has no penalty.
         </p>
+        <Link className="r-cta" href={`/get-help?need=renewal&country=CA&balance=${Math.round(b)}`}>Get a pro to beat this renewal offer — free →</Link>
       </aside>
     </div>
   );

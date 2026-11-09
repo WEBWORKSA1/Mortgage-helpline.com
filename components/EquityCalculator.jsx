@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const fmt = (n) =>
   n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -153,6 +154,7 @@ export default function EquityCalculator() {
           for spending rather than an asset or high-interest debt, the best answer may be none
           of these.
         </p>
+        <Link className="r-cta" href={`/get-help?need=equity&value=${Math.round(hv)}&balance=${Math.round(b)}&amount=${Math.round(c)}`}>Compare real equity offers with one pro — free →</Link>
       </aside>
     </div>
   );
